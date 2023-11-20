@@ -1,23 +1,27 @@
 # DeepNTax
 
-This project contains the code for the DeepNTax model. 
+DeepNTax is a Deep Neural Network (DNN) model that innovatively incorporates taxonomic rank information into its regularization terms. It uses taxonomic rank information for two reasons:
+1. The taxonomic rank structure of the data can be directly represented with each layer of the model.
+2. Using taxonomic rank rather than a phylogenetic tree makes regularization terms explicit and less affected by the misspecification of the phylogenetic tree.
 
-DeepNTax is a DNN model that innovatively incorporates taxonomic rank information into its regularization terms. Taxonomic rank information was also used in defining the structure of the model. Taxonomic rank is used in DeepNTax for two reasons. First, the taxonomic rank structure of the data can be directly represented with each layer of the model. Secondly, using taxonomic rank rather than a phylogenetic tree makes regularization terms explicit and less affected by the misspecifi-cation of the phylogenetic tree. The taxonomic information was encompassed in regularization for the proposed model. 
+The regularization matrix in DeepNTax is constructed using two ideas from the taxonomic information:
+1. Closer taxonomic information between taxa could indicate that they share similar biological traits.
+2. Taxa that differ at a higher taxonomic rank could represent a relatively larger difference between the taxa.
 
-In DeepNTax, the regularization matrix is constructed using the two ideas from the taxonomic information. First, closer taxonomic information between taxa could indicate that they share similar biologi-cal traits. Second, taxa that differ at a higher taxonomic rank could represent a relatively larger difference between the taxa. 
+## Prerequisites
 
+To run the DeepNTax model, you need the following files:
+
+- `path_info_DeepNTax.cfg`: A config file containing paths of data files and save directory.
+- `network_info_DeepNTax.cfg`: A config file containing information of the model including hyperparameters.
+- `otu_table.csv`: An OTU relative abundance table with samples in rows and OTUs in columns.
+- `phenotype.csv`: Sample phenotype information.
+- `taxonomic_information.csv`: Files containing microbiome phylogenetic information.
+- `deepntax`: Source files for the model.
 
 ## Running the Code
-To run the code, you need following files. 
 
-* path_info_DeepNTax.cfg: config file containing paths of data files and save directory
-* network_info_DeepNTax.cfg: config file containg information of model including hyperparameters
-* otu_table.csv: OTU relative abundance table with samples in rows and OTUs in columns
-* phenotype.csv: sample phenotype information
-* taxonomic_information.csv: files containing microbiome phylogenetic informations
-* deepntax: source files for the model
-
-Then, you can run the `DeepNTax.py` script with these configuration files, for example:
+To run the DeepNTax model, execute the `DeepNTax.py` script with the configuration files as arguments:
 
 ```bash
 nohup python3 -u DeepNTax.py network_info_DeepNTax.cfg path_info_DeepNTax.cfg > ./DeepNTax_status.txt &
