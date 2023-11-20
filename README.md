@@ -15,6 +15,7 @@ To run the code, you need following files.
 * otu_table.csv: OTU relative abundance table with samples in rows and OTUs in columns
 * phenotype.csv: sample phenotype information
 * taxonomic_information.csv: files containing microbiome phylogenetic informations
+* deepntax: source files for the model
 
 Then, you can run the `DeepNTax.py` script with these configuration files, for example:
 
