@@ -10,8 +10,8 @@ In DeepNTax, the regularization matrix is constructed using the two ideas from t
 ## Running the Code
 To run the code, you need following files. 
 
-* path_info_DeepNTax.cfg
-* network_info_DeepNTax.cfg
+* path_info_DeepNTax.cfg: config file containing paths of data files and save directory
+* network_info_DeepNTax.cfg: config file containg information of model including hyperparameters
 * otu_table.csv: OTU relative abundance table with samples in rows and OTUs in columns
 * phenotype.csv: sample phenotype information
 * taxonomic_information.csv: files containing microbiome phylogenetic informations
